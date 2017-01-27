@@ -68,7 +68,12 @@ public abstract class BaseActivity extends FragmentActivity {
         base = onCreate(new BaseBuilder(this));
         base.init(onCreateCamera(new CameraBuilder(base)), onCreateRender(new RenderConfig(base)));
 
-        setContentView(base.render.getView());
+        initContentView(base.render.getView());
+    }
+
+    protected void initContentView(BaseGLView glView) {
+
+        setContentView(glView);
     }
 
     /**

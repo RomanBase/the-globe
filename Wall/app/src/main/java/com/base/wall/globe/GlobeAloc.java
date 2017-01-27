@@ -9,7 +9,7 @@ import com.base.lib.engine.BaseRender;
 import com.base.lib.engine.BaseRenderer;
 import com.base.lib.engine.common.Colorf;
 import com.base.lib.engine.other.dev.FpsBar;
-import com.base.wall.ActivityMain;
+import com.ankhrom.wall.globe.ActivityMain;
 import com.base.wall.ConnectionHandler;
 import com.base.wall.Shaders;
 import com.base.wall.config.ConfigPrefs;

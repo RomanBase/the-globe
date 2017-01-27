@@ -1,5 +1,6 @@
 package com.base.wall;
 
+import com.ankhrom.wall.globe.R;
 import com.base.lib.engine.BaseGL;
 import com.base.lib.engine.BaseShader;
 import com.base.lib.engine.builders.BaseFactory;

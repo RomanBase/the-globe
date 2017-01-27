@@ -1,4 +1,4 @@
-package com.base.wall;
+package com.ankhrom.wall.globe;
 
 import android.view.View;
 
@@ -7,6 +7,7 @@ import com.base.lib.engine.builders.CameraBuilder;
 import com.base.lib.engine.builders.RenderConfig;
 import com.base.lib.wall.BasePaperRender;
 import com.base.lib.wall.BasePaperService;
+import com.base.wall.WallRenderMain;
 
 public class WallServiceMain extends BasePaperService {
 
