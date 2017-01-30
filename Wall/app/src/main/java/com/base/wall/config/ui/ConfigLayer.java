@@ -54,6 +54,10 @@ public class ConfigLayer extends BaseUILayer implements ConfigChangedListener {
     @Override
     public void update() {
 
+        if (base.time.appTime() > 5000) {
+            ymove = 0.1f;
+        }
+
         int count = items.size();
         if (count > 0) {
             adjustVerticalPositions(count - 1, 0, 0, 0);

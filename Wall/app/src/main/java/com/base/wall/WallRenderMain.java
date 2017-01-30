@@ -48,4 +48,12 @@ public class WallRenderMain extends BasePaperRender {
 
         super.onDestroy();
     }
+
+    @Override
+    protected void onUpdate() {
+
+        if(globe != null){
+            globe.promoUpdate();
+        }
+    }
 }

@@ -3,13 +3,13 @@ package com.base.wall.globe;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 
+import com.ankhrom.wall.globe.ActivityMain;
 import com.base.lib.engine.Base;
 import com.base.lib.engine.BaseObject;
 import com.base.lib.engine.BaseRender;
 import com.base.lib.engine.BaseRenderer;
 import com.base.lib.engine.common.Colorf;
 import com.base.lib.engine.other.dev.FpsBar;
-import com.ankhrom.wall.globe.ActivityMain;
 import com.base.wall.ConnectionHandler;
 import com.base.wall.Shaders;
 import com.base.wall.config.ConfigPrefs;
@@ -55,6 +55,25 @@ public class GlobeAloc extends BaseObject implements ForecastIO.WeatherDataListe
         forecast.setWeatherListener(this);
 
         requestWeatherUpdate(true);
+    }
+
+    double temp = -50.0f;
+
+    public void promoUpdate() {
+
+        if (base.time.appTime() > 10000) {
+            temp += 5.0f / base.render.getCurrentFPS();
+        }
+
+        if (temp > 50.0f) {
+            temp = 50.0f;
+        }
+
+        Colorf color = new WeatherColorUpdater(base, null, 0, new Colorf()).getTemperatureColor(temp);
+
+        for (ColorChangedListener listener : colorChangedListeners) {
+            listener.onColorChanged(color);
+        }
     }
 
     public GlobeAloc init() {

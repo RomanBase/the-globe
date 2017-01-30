@@ -140,6 +140,7 @@ public class TheGlobe extends BaseRenderable implements ColorChangedListener, We
         BaseGLBuffer.glDrawElements(faces);
     }
 
+
     @Override
     public void update() {
 
